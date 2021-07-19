@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.WA_StatusActivity">
+
+    <RelativeLayout
+        android:id="@+id/image_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/tool_back">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/Wa_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:fontFamily="@font/f1"
+            android:text="@string/wastatus"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image_header"
+        android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/status_tab"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:tabRippleColor="@color/white"
+        app:tabSelectedTextColor="@color/black"
+        app:tabIndicatorColor="@color/tool_back"
+        android:background="@color/white"
+        app:tabTextColor="@android:color/darker_gray" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/status_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+    <LinearLayout
+        android:id="@+id/banner_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical" />
+
+    </LinearLayout>
+
+</RelativeLayout>

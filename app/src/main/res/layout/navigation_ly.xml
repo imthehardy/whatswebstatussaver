@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rv_whatsapp_option"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/whatsapp_option"
+            android:textSize="18sp"
+            android:fontFamily="@font/f1"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/rv_whatsapp_option">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/privacy_policy"
+            android:textSize="18sp"
+            android:fontFamily="@font/f1"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_rateus"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/rv_privacy_policy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/rate_us"
+            android:fontFamily="@font/f1"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_version"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_below="@id/rv_rateus">
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/version"
+            android:fontFamily="@font/f1"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/version_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/version"
+            android:text="@string/_1_0"
+            android:fontFamily="@font/f1"
+            android:textSize="18sp"
+            android:textColor="@color/gray"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
