@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Model;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Model;
 
 public class ImageStatusModel {
 

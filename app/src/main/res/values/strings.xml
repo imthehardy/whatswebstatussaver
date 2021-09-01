@@ -26,7 +26,7 @@
     <string name="version">Version</string>
     <string name="_1_0">1.0</string>
     <string name="enter_phone_number">Enter phone number</string>
-    <string name="enter_message">Enter Message</string>
+    <string name="enter_message">Enter Message /n /n</string>
     <string name="send_message">Send message</string>
 
     //test id
@@ -38,5 +38,7 @@
     <string name="GOOGLE_AD_MOB_APP_ID">ca-app-pub-6868784644735256~4166294650</string>
     <string name="GOOGLE_AD_BANNER_ID">ca-app-pub-6868784644735256/4433887965</string>
     <string name="GOOGLE_AD_INTERSTITIAL_ID">ca-app-pub-6868784644735256/6892051410</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="wa_b">Wa Business</string>
 
 </resources>

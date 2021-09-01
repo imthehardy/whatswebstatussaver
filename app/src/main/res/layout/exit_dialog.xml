@@ -41,9 +41,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:background="@color/line" />
+
             </LinearLayout>
 
             <TextView
@@ -74,7 +73,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/tool_back"
                     android:fontFamily="@font/f1"
                     android:text="@string/exit"
                     android:textAllCaps="false"
@@ -88,13 +87,17 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/tool_back"
                     android:fontFamily="@font/f1"
                     android:text="@string/cancel"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
+
             </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>

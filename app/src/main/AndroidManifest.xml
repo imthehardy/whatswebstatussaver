@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.cubecode.whatsweb.savestatusapp.download.whatsscan">
+    package="com.wastatus.whatsweb.savestatusapp.download.whatsscan">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission
-        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-        android:minSdkVersion="30"
-        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -41,7 +37,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.cubecode.whatsweb.savestatusapp.download.whatsscan.provider"
+            android:authorities="com.wastatus.whatsweb.savestatusapp.download.whatsscan.provider"
             android:exported="false"
             android:grantUriPermissions="true"
             tools:replace="android:authorities">

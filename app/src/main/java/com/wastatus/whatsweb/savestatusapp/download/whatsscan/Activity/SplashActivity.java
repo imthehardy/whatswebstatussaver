@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Activity;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.R;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.R;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -32,12 +32,47 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        load_interAds();
+
         start_btn = findViewById(R.id.start_btn);
         start_anim = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        start_anim.setRepeatCount(1);
 
         animation = AnimationUtils.loadAnimation(this, R.anim.start_btn_anim);
         animation.setRepeatCount(Animation.INFINITE);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                start_btn.startAnimation(start_anim);
+                start_btn.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        start_btn.startAnimation(animation);
+                    }
+                },1000);
+            }
+        }, 3000);
+
+        start_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.show(SplashActivity.this);
+                } else {
+                    PerformOnclick();
+                }
+            }
+        });
+    }
+
+    public void PerformOnclick() {
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        finish();
+    }
+
+    public void load_interAds(){
         AdRequest adRequest = new AdRequest.Builder().build();
 
         InterstitialAd.load(this, getResources().getString(R.string.GOOGLE_AD_INTERSTITIAL_ID), adRequest,
@@ -70,31 +105,6 @@ public class SplashActivity extends AppCompatActivity {
                         mInterstitialAd = null;
                     }
                 });
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                start_btn.startAnimation(start_anim);
-                start_btn.setVisibility(View.VISIBLE);
-                start_btn.startAnimation(animation);
-            }
-        }, 3000);
-
-        start_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mInterstitialAd != null) {
-                    mInterstitialAd.show(SplashActivity.this);
-                } else {
-                    PerformOnclick();
-                }
-            }
-        });
-    }
-
-    public void PerformOnclick() {
-        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-        finish();
     }
 
 }

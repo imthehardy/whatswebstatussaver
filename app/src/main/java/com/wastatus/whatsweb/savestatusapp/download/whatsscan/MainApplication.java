@@ -1,8 +1,8 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan;
 
 import android.app.Application;
 
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.Sharepraf;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.Sharepraf;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;

@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Adapter;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Adapter;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -22,10 +22,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Model.ImageStatusModel;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Model.VideoStatusModel;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.R;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Model.ImageStatusModel;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Model.VideoStatusModel;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.R;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
- package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Activity;
+ package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.R;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;

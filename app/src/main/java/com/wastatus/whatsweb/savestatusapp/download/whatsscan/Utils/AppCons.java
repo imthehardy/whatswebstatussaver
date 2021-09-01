@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils;
 
 import android.Manifest;
 import android.app.Activity;

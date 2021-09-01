@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Fragment;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Fragment;
 
 import android.os.AsyncTask;
 import android.os.Build;
@@ -17,25 +17,29 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Adapter.ImageStatusAdapter;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Model.ImageStatusModel;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.R;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.Sharepraf;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Adapter.ImageStatusAdapter;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Adapter.VideoStatusAdapter;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.BuildConfig;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Model.ImageStatusModel;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Model.VideoStatusModel;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.R;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.Sharepraf;
 
 import java.io.File;
 import java.util.ArrayList;
 
-public class ImageStatusFragment extends Fragment {
+public class VideoStatusFragment extends Fragment {
 
-    RecyclerView rv_image_status;
-    String TAG = "ImageStatusFragment";
-    ArrayList<ImageStatusModel> imageStatusModels;
-    ImageStatusAdapter imageStatusAdapter;
+    RecyclerView rv_video_status;
+    String TAG = "VideoStatusFragment";
+    ArrayList<VideoStatusModel> videoStatusModels;
+    VideoStatusAdapter videoStatusAdapter;
     ProgressBar progress;
     TextView no_status;
     boolean wa_status;
-    public ImageStatusFragment() {
+
+    public VideoStatusFragment() {
 
     }
 
@@ -43,9 +47,9 @@ public class ImageStatusFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         wa_status = getArguments().getBoolean("Wa_status");
-        View view = inflater.inflate(R.layout.fragment_imagestatus, container, false);
+        View view = inflater.inflate(R.layout.fragment_videostatus, container, false);
 
-        rv_image_status = view.findViewById(R.id.rv_image_status);
+        rv_video_status = view.findViewById(R.id.rv_video_status);
         progress = view.findViewById(R.id.progress);
         no_status = view.findViewById(R.id.no_status);
 
@@ -58,8 +62,7 @@ public class ImageStatusFragment extends Fragment {
         return view;
     }
 
-    public class GetSavedData extends AsyncTask<Void, Void , Void> {
-
+    public class GetSavedData extends AsyncTask<Void, Void ,Void> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -68,20 +71,20 @@ public class ImageStatusFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            imageStatusModels = new ArrayList<>();
+            videoStatusModels = new ArrayList<>();
 
-            Log.e(TAG, "doInBackground: "+AppCons.SAVED_PATH );
             if (new File(AppCons.SAVED_PATH).exists()) {
                 File file = new File(AppCons.SAVED_PATH);
 
+                Log.e(TAG, "onCreateView: "+file.getAbsolutePath());
                 File[] status = file.listFiles();
 
                 if (status != null && status.length > 0) {
                     for (File files : status){
-                        if (files.getPath().endsWith(".jpg") || files.getPath().endsWith(".png")){
-                            ImageStatusModel imageModel = new ImageStatusModel();
-                            imageModel.setPath(files.getAbsolutePath());
-                            imageStatusModels.add(imageModel);
+                        if (files.getPath().endsWith(".mp4")){
+                            VideoStatusModel videoModel = new VideoStatusModel();
+                            videoModel.setPath(files.getAbsolutePath());
+                            videoStatusModels.add(videoModel);
                         }
                     }
                     Log.e(TAG, "doInBackground: done" );
@@ -95,13 +98,13 @@ public class ImageStatusFragment extends Fragment {
             super.onPostExecute(aVoid);
             progress.setVisibility(View.GONE);
 
-            if (imageStatusModels.size() == 0) {
+            if (videoStatusModels.size() == 0) {
                 no_status.setVisibility(View.VISIBLE);
             }
 
-            rv_image_status.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-            imageStatusAdapter = new ImageStatusAdapter(getActivity(), imageStatusModels, wa_status);
-            rv_image_status.setAdapter(imageStatusAdapter);
+            rv_video_status.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+            videoStatusAdapter = new VideoStatusAdapter(getActivity(), videoStatusModels, wa_status);
+            rv_video_status.setAdapter(videoStatusAdapter);
         }
 
     }
@@ -117,7 +120,7 @@ public class ImageStatusFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            imageStatusModels = new ArrayList<>();
+            videoStatusModels = new ArrayList<>();
 
             File file;
 
@@ -136,20 +139,19 @@ public class ImageStatusFragment extends Fragment {
             }
 
             if (file.exists()) {
-
+                Log.e(TAG, "onCreateView: "+file.getAbsolutePath());
                 File[] status = file.listFiles();
 
                 if (status != null && status.length > 0) {
                     for (File files : status){
-                            if (files.getPath().endsWith(".jpg") || files.getPath().endsWith(".png")){
-                                ImageStatusModel imageModel = new ImageStatusModel();
-                                imageModel.setPath(files.getAbsolutePath());
-                                imageStatusModels.add(imageModel);
-                            }
+                        if (files.getPath().endsWith(".mp4")){
+                            VideoStatusModel videoModel = new VideoStatusModel();
+                            videoModel.setPath(files.getAbsolutePath());
+                            videoStatusModels.add(videoModel);
+                        }
                     }
-
+                    Log.e(TAG, "doInBackground: done" );
                 }
-                Log.e(TAG, "doInBackground: "+file.getPath() );
             }
             return null;
         }
@@ -159,14 +161,13 @@ public class ImageStatusFragment extends Fragment {
             super.onPostExecute(aVoid);
             progress.setVisibility(View.GONE);
 
-            if (imageStatusModels.size() == 0) {
+            if (videoStatusModels.size() == 0){
                 no_status.setVisibility(View.VISIBLE);
             }
 
-            rv_image_status.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-            imageStatusAdapter = new ImageStatusAdapter(getActivity(), imageStatusModels, wa_status);
-            rv_image_status.setAdapter(imageStatusAdapter);
-
+            rv_video_status.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+            videoStatusAdapter = new VideoStatusAdapter(getActivity(), videoStatusModels, wa_status);
+            rv_video_status.setAdapter(videoStatusAdapter);
         }
     }
 

@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Activity;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Activity;
 
 import android.app.AppOpsManager;
 import android.app.Dialog;
@@ -26,10 +26,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.BuildConfig;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.R;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.Sharepraf;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.BuildConfig;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.R;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.Sharepraf;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -103,6 +103,13 @@ public class HomeActivity extends AppCompatActivity {
         RelativeLayout rv_privacy_policy = headerLayout.findViewById(R.id.rv_privacy_policy);
         RelativeLayout rv_rateus = headerLayout.findViewById(R.id.rv_rateus);
         TextView version_code = headerLayout.findViewById(R.id.version_code);
+        TextView wa_or_wab = headerLayout.findViewById(R.id.wa_or_wab);
+
+        if (Sharepraf.getBoolean(AppCons.WA_OPTIONS, true)) {
+            wa_or_wab.setText(getResources().getString(R.string.whatsapp));
+        } else {
+            wa_or_wab.setText(getResources().getString(R.string.wa_b));
+        }
 
         version_code.setText(BuildConfig.VERSION_NAME);
 
@@ -131,6 +138,7 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Sharepraf.putBoolean(AppCons.WA_OPTIONS, true);
+                        wa_or_wab.setText(getResources().getString(R.string.whatsapp));
                         dialog.dismiss();
                         drawer.closeDrawers();
                     }
@@ -140,6 +148,7 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Sharepraf.putBoolean(AppCons.WA_OPTIONS, false);
+                        wa_or_wab.setText(getResources().getString(R.string.wa_b));
                         dialog.dismiss();
                         drawer.closeDrawers();
                     }
@@ -166,25 +175,25 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private boolean arePermissionDenied() {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            return checkStorageApi30();
-        }
-        return false;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.R)
-    boolean checkStorageApi30() {
-        AppOpsManager appOps = getApplicationContext().getSystemService(AppOpsManager.class);
-        int mode = appOps.unsafeCheckOpNoThrow(
-                "android:manage_external_storage",
-                getApplicationContext().getApplicationInfo().uid,
-                getApplicationContext().getPackageName()
-        );
-        return mode != AppOpsManager.MODE_ALLOWED;
-
-    }
+//    private boolean arePermissionDenied() {
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            return checkStorageApi30();
+//        }
+//        return false;
+//    }
+//
+//    @RequiresApi(api = Build.VERSION_CODES.R)
+//    boolean checkStorageApi30() {
+//        AppOpsManager appOps = getApplicationContext().getSystemService(AppOpsManager.class);
+//        int mode = appOps.unsafeCheckOpNoThrow(
+//                "android:manage_external_storage",
+//                getApplicationContext().getApplicationInfo().uid,
+//                getApplicationContext().getPackageName()
+//        );
+//        return mode != AppOpsManager.MODE_ALLOWED;
+//
+//    }
 
     public void Init() {
         cv_saved_status.setOnClickListener(new View.OnClickListener() {
@@ -257,17 +266,17 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 2 :
-                if (!arePermissionDenied()) {
+//                if (!arePermissionDenied()) {
                     intent = new Intent(HomeActivity.this, WA_StatusActivity.class);
                     intent.putExtra("wa_status", true);
                     startActivity(intent);
-                } else {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                        startActivityForResult(intent, AppCons.PERMISSION_CODE);
-                        return;
-                    }
-                }
+//                } else {
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                        intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                        startActivityForResult(intent, AppCons.PERMISSION_CODE);
+//                        return;
+//                    }
+//                }
                 break;
             case 3 :
                 startActivity(new Intent(HomeActivity.this, WhatsWebActivity.class));
@@ -278,7 +287,7 @@ public class HomeActivity extends AppCompatActivity {
             case 5 :
                 intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
-                String sb = "Save WhatsApp status From Play Store\n\n" + "https://play.google.com/store/apps/details?id=" + getPackageName();
+                String sb = "Save WhatsApp status app From Play Store\n\n" + "https://play.google.com/store/apps/details?id=" + getPackageName();
                 intent.putExtra(Intent.EXTRA_TEXT, sb);
                 intent.setType("text/plain");
                 startActivity(intent);

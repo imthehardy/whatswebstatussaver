@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".Activity.Direct_MsgActivity">
 
     <RelativeLayout
@@ -18,89 +18,104 @@
             android:id="@+id/back_icon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_back"
             android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="@string/direct_message"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_centerInParent="true"/>
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/ccp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:ccp_defaultNameCode="In"
-        app:ccpDialog_textColor="@color/black"
-        android:layout_below="@id/msg_title"
-        android:backgroundTint="#23000000"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp" />
-
-    <EditText
-        android:id="@+id/phoneText"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/enter_phone_number"
-        android:textColor="@color/black"
-        android:textColorHint="@android:color/black"
-        android:inputType="number"
-        android:layout_marginTop="5dp"
-        android:singleLine="true"
-        android:layout_marginRight="20dp"
-        android:layout_below="@id/ccp"
-        android:gravity="center"
-        android:fontFamily="@font/f1"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/button_bg"
-        tools:ignore="TextFields" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/msg_title">
 
-    <EditText
-        android:id="@+id/whats_dir_msg"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="@string/enter_message"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@id/phoneText"
-        android:fontFamily="@font/f1"
-        android:gravity="center"
-        android:textColorHint="@android:color/black"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/button_bg"/>
+        <RelativeLayout
+            android:id="@+id/num_phonr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
 
-    <TextView
-        android:id="@+id/msg_send"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/f1"
-        android:text="@string/send_message"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:layout_below="@id/whats_dir_msg"
-        android:padding="10dp"
-        android:gravity="center"
-        android:background="@drawable/start_btn"
-        android:textAllCaps="false"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColor="@color/white"/>
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/button_bg"
+                android:gravity="center"
+                app:ccpDialog_textColor="@color/black"
+                app:ccp_defaultNameCode="In" />
 
-    <LinearLayout
-        android:id="@+id/banner_50"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"/>
+            <EditText
+                android:id="@+id/phoneText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toEndOf="@id/ccp"
+                android:background="@drawable/button_bg"
+                android:fontFamily="@font/f1"
+                android:gravity="center"
+                android:hint="@string/enter_phone_number"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/black"
+                tools:ignore="TextFields" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/whats_dir_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/num_phonr"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/f1"
+            android:hint="Enter Message \n \n"
+            android:maxLines="5"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/msg_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/whats_dir_msg"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/start_btn"
+            android:fontFamily="@font/f1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/send_message"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/banner_50"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

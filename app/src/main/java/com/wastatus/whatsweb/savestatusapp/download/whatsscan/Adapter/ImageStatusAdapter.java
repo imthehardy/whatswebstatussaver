@@ -1,4 +1,4 @@
-package com.cubecode.whatsweb.savestatusapp.download.whatsscan.Adapter;
+package com.wastatus.whatsweb.savestatusapp.download.whatsscan.Adapter;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,9 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Model.ImageStatusModel;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.R;
-import com.cubecode.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Model.ImageStatusModel;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.R;
+import com.wastatus.whatsweb.savestatusapp.download.whatsscan.Utils.AppCons;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -108,8 +108,8 @@ public class ImageStatusAdapter extends RecyclerView.Adapter<ImageStatusAdapter.
                 dialog.getWindow().setLayout((int) (AppCons.getWidth(context) * 0.85f), ViewGroup.LayoutParams.WRAP_CONTENT);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 ImageView status_img = dialog.findViewById(R.id.status_img);
-                Button share = (Button) dialog.findViewById(R.id.share);
-                Button save = (Button) dialog.findViewById(R.id.save);
+                ImageView share = dialog.findViewById(R.id.share);
+                ImageView save = dialog.findViewById(R.id.save);
 
                 Glide.with(context).load(imageStatusModels.get(position).getPath()).into(status_img);
 
