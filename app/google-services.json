@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "796277428230",
-    "project_id": "whatsapweb-00",
-    "storage_bucket": "whatsapweb-00.appspot.com"
+    "project_number": "496262415333",
+    "project_id": "whatsapp-status-saver-00",
+    "storage_bucket": "whatsapp-status-saver-00.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:796277428230:android:756866330b2a6174feb387",
+        "mobilesdk_app_id": "1:496262415333:android:401274435f7223df30a50c",
         "android_client_info": {
           "package_name": "com.wastatus.whatsweb.savestatusapp.download.whatsscan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "796277428230-fk22i072v80vlp8i2qc7fqso348rpa0v.apps.googleusercontent.com",
+          "client_id": "496262415333-7g2fs1gc94ph0u6coq006allvaoa957c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDWMqKC9x0bDtyjC88HU6ZWjlAIs3aVRV0"
+          "current_key": "AIzaSyBh7L_PU9BNJzTz35A-W4PIicavmVEbjws"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "796277428230-fk22i072v80vlp8i2qc7fqso348rpa0v.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:796277428230:android:06ec5900decee51dfeb387",
-        "android_client_info": {
-          "package_name": "com.whatsweb.savestatusapp.download.whatsscan.scanner.qrscan"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "796277428230-fk22i072v80vlp8i2qc7fqso348rpa0v.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDWMqKC9x0bDtyjC88HU6ZWjlAIs3aVRV0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "796277428230-fk22i072v80vlp8i2qc7fqso348rpa0v.apps.googleusercontent.com",
+              "client_id": "496262415333-7g2fs1gc94ph0u6coq006allvaoa957c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

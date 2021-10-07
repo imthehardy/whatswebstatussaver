@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Whats Web - Status Saver</string>
+    <string name="app_name">Whats Scan - Status Saver</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nav_open">open</string>
@@ -12,33 +12,35 @@
     <string name="no_status_found">No Status found</string>
     <string name="whats_web">Whats Scanner</string>
     <string name="scan_qr_code">Scan QR Code</string>
-    <string name="whatsapp_status">Whatsapp Status</string>
-    <string name="save_status_image_amp_videos"><![CDATA[Save status image & videos]]></string>
-    <string name="show_saved_image_videos"><![CDATA[Show saved image & videos]]></string>
+    <string name="whatsapp_status">Status</string>
+    <string name="save_status_image_amp_videos"><![CDATA[Save status]]></string>
+    <string name="show_saved_image_videos"><![CDATA[Show saved status]]></string>
     <string name="direct_message">Direct message</string>
-    <string name="send_direct_message_on_whatsapp">Send direct message on whatsapp</string>
+    <string name="send_direct_message_on_whatsapp">Send direct messages</string>
     <string name="share_app_with_family_amp_friends"><![CDATA[Share app with family & friends]]></string>
     <string name="share">Share</string>
-    <string name="dark_mode">Dark Mode</string>
-    <string name="whatsapp_option">Whatsapp option</string>
+    <string name="whatsapp_option">option</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="rate_us">Rate us</string>
     <string name="version">Version</string>
     <string name="_1_0">1.0</string>
     <string name="enter_phone_number">Enter phone number</string>
-    <string name="enter_message">Enter Message /n /n</string>
+    <string name="enter_message">Enter Message /n/n</string>
     <string name="send_message">Send message</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="wa_b">Wa Business</string>
+    <string name="ad_attribution">Ad</string>
 
     //test id
 <!--    <string name="GOOGLE_AD_MOB_APP_ID">ca-app-pub-3940256099942544~3347511713</string>-->
 <!--    <string name="GOOGLE_AD_BANNER_ID">ca-app-pub-3940256099942544/6300978111</string>-->
 <!--    <string name="GOOGLE_AD_INTERSTITIAL_ID">ca-app-pub-3940256099942544/1033173712</string>-->
+<!--    <string name="GOOGLE_AD_NATIVE_ID">ca-app-pub-3940256099942544/2247696110</string>-->
 
     //live id
-    <string name="GOOGLE_AD_MOB_APP_ID">ca-app-pub-6868784644735256~4166294650</string>
-    <string name="GOOGLE_AD_BANNER_ID">ca-app-pub-6868784644735256/4433887965</string>
-    <string name="GOOGLE_AD_INTERSTITIAL_ID">ca-app-pub-6868784644735256/6892051410</string>
-    <string name="whatsapp">Whatsapp</string>
-    <string name="wa_b">Wa Business</string>
+    <string name="GOOGLE_AD_MOB_APP_ID">ca-app-pub-2419510171181129~6035709247</string>
+    <string name="GOOGLE_AD_BANNER_ID">ca-app-pub-2419510171181129/7784723425</string>
+    <string name="GOOGLE_AD_INTERSTITIAL_ID">ca-app-pub-2419510171181129/9432847014</string>
+    <string name="GOOGLE_AD_NATIVE_ID">ca-app-pub-2419510171181129/8119765340</string>
 
 </resources>
